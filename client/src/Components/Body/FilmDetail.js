@@ -7,6 +7,7 @@ import { faPlay, faStar, faCirclePlay, faSpinner} from '@fortawesome/free-solid-
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import '../../Style/BodyCss/FilmDetail.css'
 import '../../Style/All/grid.css'
+import '../../Style/Responsive/Responsive.css'
 import fetchingApiData from '../../Ultil/FetchingData/FetchingApi'
 import {useHandleCLickWatchFilm} from '../../Ultil/Hepler/navigationHelpers'
 import {useHandleClickFilmDetail } from '../../Ultil/Hepler/navigationHelpers';

@@ -4,6 +4,7 @@ import { faCirclePlay,faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 import '../../Style/BodyCss/Home.css'
 import '../../Style/All/grid.css'
+import '../../Style/Responsive/Responsive.css'
 import fetchingApiData from '../../Ultil/FetchingData/FetchingApi'
 import Pagination from '../Pagination/Pagination';
 import {useHandleClickFilmDetail } from '../../Ultil/Hepler/navigationHelpers';

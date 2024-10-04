@@ -5,6 +5,18 @@
 .mt-5 {
     margin-top: 10px;
 }
+.overlay {
+    display: none;
+}
+.overlay.open {
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    background-color: transparent;
+    position: fixed;
+    z-index: 50;
+}
 
 
 .grid-container {
@@ -19,30 +31,35 @@
 #header {
     display: flex;
     height: 60px;
-    margin: 0 calc(100%-25px);
+    padding: 0 1.3rem;
 }
 /* animaiton when clicking something */
 .header-list {
     transform: rotate(0deg);
-    transition: all .5s ease-in;
+    transition: transform 0.5s ease-in; /* Smooth transition only on transform */
+    margin-top: 15px;
+    transform-origin: center;
 }
+
+/* The 'active' state, rotating 90 degrees */
 .header-list.active {
-    transform: rotate(90deg);
-    animation: rotate .5s ease-in;
+    transform: rotate(90deg); /* Simple rotate, no need for @keyframes */
 }
+
+/* Optional: if you want to add some custom animation with keyframes, you can add it separately, but it’s not necessary for simple rotation */
 @keyframes rotate {
     from {
         transform: rotate(0deg);
-    } to {
+    }
+    to {
         transform: rotate(90deg);
     }
 }
+
 .header-list_icon {
     color: white;
     font-size: 25px;
     line-height: 60px;
-    margin-left: 10px;
-    
 }
 
 .nav {
@@ -50,7 +67,7 @@
 }
 .nameWeb {
     color: white;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 .navcontainer {

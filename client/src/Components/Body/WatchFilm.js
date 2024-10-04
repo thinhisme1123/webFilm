@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar,faSpinner,faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import '../../Style/BodyCss/FilmDetail.css'
 import '../../Style/All/grid.css'
+import '../../Style/Responsive/Responsive.css'
 import fetchingApiData from '../../Ultil/FetchingData/FetchingApi'
 import {useHandleClickFilmDetail } from '../../Ultil/Hepler/navigationHelpers';
 import {useHandleTruncateText} from '../../Ultil/Hepler/truncateText'

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay,faSpinner } from '@fortawesome/free-solid-svg-icons';
 import '../../Style/BodyCss/Home.css'
 import '../../Style/All/grid.css'
+import '../../Style/Responsive/Responsive.css'
 import fetchingApiData from '../../Ultil/FetchingData/FetchingApi'
 import {useHandleClickFilmDetail } from '../../Ultil/Hepler/navigationHelpers';
 import {useHandleTruncateText} from '../../Ultil/Hepler/truncateText'
@@ -95,18 +96,26 @@ function Home() {
                         {slider.length > 0 && (
                             <>
                                 <div className="slide first">
+                                    <h4>{slider[0].name}</h4>
+                                    <h5>{slider[0].origin_name}<span> ({slider[0].year})</span></h5>
                                     <button onClick={() => hanldeClickFilmDetail(slider[0].slug)} className="watch-btn_slider">Watch</button>
                                     <img src={slider[0].thumb_url} alt="slide1" />
                                 </div>
                                 <div className="slide">
+                                    <h4>{slider[1].name}</h4>
+                                    <h5>{slider[1].origin_name}<span> ({slider[1].year})</span></h5>
                                     <button onClick={() => hanldeClickFilmDetail(slider[1].slug)} className="watch-btn_slider">Watch</button>
                                     <img src={slider[1].thumb_url} alt="slide2" />
                                 </div>
                                 <div className="slide">
+                                    <h4>{slider[2].name}</h4>
+                                    <h5>{slider[2].origin_name}<span> ({slider[2].year})</span></h5>
                                     <button onClick={() => hanldeClickFilmDetail(slider[2].slug)} className="watch-btn_slider">Watch</button>
                                     <img src={slider[2].thumb_url} alt="slide3" />
                                 </div>
                                 <div className="slide">
+                                    <h4>{slider[3].name}</h4>
+                                    <h5>{slider[3].origin_name}<span> ({slider[3].year})</span></h5>
                                     <button onClick={() => hanldeClickFilmDetail(slider[3].slug)} className="watch-btn_slider">Watch</button>
                                     <img src={slider[3].thumb_url} alt="slide4" />
                                 </div>
@@ -129,7 +138,7 @@ function Home() {
             </div>
             {/* SLIDER - END */}
             <div className="maincontainer">
-                <div className="grid">
+                <div className="grid home-container">
                     {/* PHIM MỚI CẬP NHẬT - START */}
                     <div className="row">
                         <div className='header-container'> 

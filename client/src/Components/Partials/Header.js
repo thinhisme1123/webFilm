@@ -4,6 +4,7 @@ import '../../Style/PartialsCss/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faList, faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons'; 
 import '../../Style/Responsive/Responsive.css'
+
 import {useHandleEnterSearchFilm} from '../../Ultil/Hepler/navigationHelpers'
 
 function Header() {
@@ -11,6 +12,20 @@ function Header() {
     const inputBox = useRef(null)
     const handleEnterSearchFilm = useHandleEnterSearchFilm()
     const navigate = useNavigate();
+
+    const [isNavOpen, setIsNavOpen] = useState(false); 
+    const [isActive, setIsActive] = useState(false);
+
+     // Function to open the nav
+     const openNav = () => {
+        setIsNavOpen(true);
+    };
+
+    // Function to close the nav
+    const closeNav = () => {
+        setIsNavOpen(false);
+        setIsActive(false);
+    };
 
     const hanldeSearchIconClick = () => {
         setOpen(!isOpen)
@@ -22,21 +37,31 @@ function Header() {
         }
     };
 
+     // Click handler for the list icon
+     const handleClick = () => {
+        setIsActive(!isActive); // Toggle 'active' class on headerList
+        if (isNavOpen) {
+            closeNav();
+        } else {
+            openNav();
+        }
+    };
+
 
     return (
         <header>
             <div className="main-container">
                 <div className="grid-container">
                     <header id="header">    
-                        <div className="header-list">
-                            <FontAwesomeIcon className="header-list_icon" icon={faList} />
+                        <div onClick={handleClick} className={`header-list ${isActive ? 'active' : ''}`} >
+                            <FontAwesomeIcon  className="header-list_icon"  icon={faList} />
                         </div>
                         <h2 className="nameWeb">TTFilm</h2>
-                        <nav className="nav">
+                        <nav className={`nav ${isNavOpen ? 'open' : ''}`}>
                             <ul className="navcontainer">
-                                <li className="nav-item"><Link to="/" className="nav-item_link">Trang Chủ</Link></li>
+                                <li className="nav-item" onClick={closeNav}><Link to="/" className="nav-item_link">Trang Chủ</Link></li>
                                 <li className="nav-item nav-item_hover">
-                                    <a className="nav-item_link" href="">Thể Loại</a>
+                                    <a className="nav-item_link" >Thể Loại</a>
                                     <div className="subnav-genr">
                                         <ul className="genr-list">
                                             <li className="genr-list-item"><Link to="/genre/hanh-dong" className="genr-list-item_link">Hành Động</Link></li>
@@ -70,8 +95,8 @@ function Header() {
                                         </ul>
                                     </div>
                                 </li>
-                                <li className="nav-item"><Link to="/danh-sach/phim-le" className="nav-item_link">Phim Lẻ</Link></li>
-                                <li className="nav-item"><Link to="/danh-sach/phim-bo" className="nav-item_link">Phim Bộ</Link></li>
+                                <li className="nav-item" onClick={closeNav}><Link to="/danh-sach/phim-le" className="nav-item_link">Phim Lẻ</Link></li>
+                                <li className="nav-item" onClick={closeNav}><Link to="/danh-sach/phim-bo" className="nav-item_link">Phim Bộ</Link></li>
                                 <li className="nav-item topphim-hover">
                                     <a className="nav-item_link" href="">Top Film</a>
                                     <div className="subnav-topphim">
@@ -105,6 +130,7 @@ function Header() {
                     </header>
                 </div>
             </div>
+            <div className={`overlay ${isNavOpen ? 'open' : ''}`} onClick={closeNav}/>
         </header>
     );
 }
