@@ -6,6 +6,7 @@ import {faStar,faSpinner,faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import '../../Style/BodyCss/FilmDetail.css'
 import '../../Style/All/grid.css'
 import '../../Style/Responsive/Responsive.css'
+import '../../Style/BodyCss/Home.css'
 import fetchingApiData from '../../Ultil/FetchingData/FetchingApi'
 import {useHandleClickFilmDetail } from '../../Ultil/Hepler/navigationHelpers';
 import {useHandleTruncateText} from '../../Ultil/Hepler/truncateText'
@@ -123,15 +124,17 @@ function WatchFilm () {
             document.title = film.name || '';
         }
     }, [film]);
-    
+
     return (
         <div>
             <div className="filmdetail-section">
                 <div className="filmdetail-container">
                     {loading ? (
-                        <div className="loading-item">
-                            <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
-                            <h2 className='mt-3'>Thông cảm! Đợi chút nha phen....</h2>
+                        <div className="loading-container">
+                            <div className="loading-item">
+                                <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                                <h2 className='mt-3'>Thông cảm! Đợi chút nha phen....</h2>
+                            </div>
                         </div>
                     ): (
                         <div className="filmdetail-container-grid">
