@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import $ from 'jquery';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -142,7 +141,10 @@ function FilmDetail () {
             <div className="filmdetail-section">
                 {loading ? (
                     <div className="loading-container">
-                        <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                        <div className="loading-item">
+                            <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                            <h2>Thông cảm! Đợi chút nha phen....</h2>
+                        </div>
                     </div>
                 ) : (
                     <div className="filmdetail-container">

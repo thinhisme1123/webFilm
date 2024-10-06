@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
-import $ from 'jquery';
+import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -67,12 +66,10 @@ function WatchFilm () {
                 setLoading(false);
             }
         };
-        //finding the same category
         const fetchSimilarFilms = async () => {
             let urlFilmSame = ''
             const typeFilm = film.type
 
-             // Determine the URL to fetch based on the film type
              if (typeFilm === 'single') {
                 urlFilmSame = "https://phimapi.com/v1/api/danh-sach/phim-le?limit=24";
             } else if (typeFilm === 'series') {
@@ -84,7 +81,6 @@ function WatchFilm () {
             }
 
             try {
-                // Fetch the films based on the selected type
                 const response = await axios.get(urlFilmSame);
                 const similarFilmsFather = response.data;
                 const similarFilmsChild = similarFilmsFather.data.items;
@@ -93,7 +89,6 @@ function WatchFilm () {
                 const arraySimilar = [];
                 const filmIds = new Set();
 
-                // Filter similar films based on matching categories
                 similarFilmsChild.forEach(similarFilm => {
                     similarFilm.category.forEach(category => {
                         if (currentFilmCategories.includes(category.slug)) {
@@ -123,20 +118,20 @@ function WatchFilm () {
         window.scrollTo(0, 0);
     }, []);
 
-
     useEffect(() => {
         if (film) {
             document.title = film.name || '';
-            
         }
     }, [film]);
+    
     return (
         <div>
             <div className="filmdetail-section">
                 <div className="filmdetail-container">
                     {loading ? (
-                        <div className="loading-container">
+                        <div className="loading-item">
                             <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                            <h2 className='mt-3'>Thông cảm! Đợi chút nha phen....</h2>
                         </div>
                     ): (
                         <div className="filmdetail-container-grid">

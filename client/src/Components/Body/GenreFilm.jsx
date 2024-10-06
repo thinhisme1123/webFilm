@@ -12,13 +12,10 @@ import {useHandleTruncateText} from '../../Ultil/Hepler/truncateText'
 
 function GenreFilm() {
     const { slug } = useParams();
-    const [phimLe, setPhimLe] = useState([]);
-    const [phimBo, setPhimBo] = useState([]);
     const [films,setFilms] = useState([]);
     const [filterdFilm,setFilteredFilms] = useState([]);
     const [titleGenre, setTitleGenre] = useState([])
     const [loading, setLoading] = useState(false);
-    const [dataFilm, setDataFilm] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 30;
     const imgUrl = 'https://img.phimapi.com/'
@@ -44,10 +41,6 @@ function GenreFilm() {
         "kinh-di":"KINH DỊ",   
         "vien-tuong":"VIỄN TƯỞNG"  
     };
-
-
-    
-
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
@@ -56,13 +49,6 @@ function GenreFilm() {
                     `https://phimapi.com/v1/api/danh-sach/phim-le?limit=50&page=${currentPage}`,
                     `https://phimapi.com/v1/api/danh-sach/phim-bo?limit=50&page=${currentPage}`,
                 ]);
-                if (phimLeData && phimLeData.data.items) {
-                    setPhimLe(phimLeData.data.items);
-                }
-    
-                if (phimBoData && phimBoData.data.items) {
-                    setPhimBo(phimBoData.data.items);
-                }
                 const combinedFilms = [
                     ...(phimLeData?.data.items || []),
                     ...(phimBoData?.data.items || [])
@@ -107,7 +93,10 @@ function GenreFilm() {
                     <div className='row'>
                         {loading ? (
                             <div className="loading-container">
-                                <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                                <div className="loading-item">
+                                    <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                                    <h2 className='mt-3'>Thông cảm! Đợi chút nha phen....</h2>
+                                </div>
                             </div>
                         ) : (
                             filterdFilm && filterdFilm.map(item => (

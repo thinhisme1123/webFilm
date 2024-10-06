@@ -105,16 +105,17 @@
 }
 .loading-container {
     margin-top: 20px;
-    height: 100vh;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
 }
-.loading-container .icon-loading{
+.loading-item {
     margin: auto;
+    text-align: center;
 }
 .error-message {
     margin-top: 20px;
     height: 300px;
-    
 }
 
 

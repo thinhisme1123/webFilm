@@ -61,7 +61,10 @@ function TypeFilm() {
                     <div className='row'>
                         {loading ? (
                             <div className="loading-container">
-                                <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                                <div className="loading-item">
+                                    <FontAwesomeIcon className='icon-loading' icon={faSpinner} spin size="3x" />
+                                    <h2 className='mt-3'>Thông cảm! Đợi chút nha phen....</h2>
+                                </div>
                             </div>
                         ) : (
                             film && film.map(item => (
