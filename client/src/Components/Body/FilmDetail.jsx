@@ -130,7 +130,7 @@ function FilmDetail () {
 
     useEffect(() => {
         if (film) {
-            document.title = film.name || '';
+            document.title = film.name || 'Loading...';
             const ytbUrlTrailer = film.trailer_url;
             const videoID = extractYouTubeID(ytbUrlTrailer);
             setEmbedUrl(`https://www.youtube.com/embed/${videoID}`)

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../../Style/BodyCss/Login.css'
 import { Link,useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 
 function Login() {
@@ -17,7 +16,6 @@ function Login() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -32,42 +30,35 @@ function Login() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      if(response.status == 400) {
+      if(response.status === 400) {
         setErrorMessage(response.message)
       }
   
-      const result = await response.json(); // Now this will expect valid JSON
-      console.log(result); // Check the JSON response
+      const result = await response.json(); 
+      console.log(result); 
   
-      alert(result.message); // Display success message
+      alert(result.message); 
       localStorage.setItem('token', result.token); 
       setTimeout(() => {
         navigate('/')
       }, 2000);
     } catch (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
         console.log('Error response:', error.response);
         
-        // Handle 400 Bad Request errors
         if (error.response.status === 400) {
           setErrorMessage(error.response.data.message || "Invalid request. Please check your input.");
         } 
-        // Handle 401 Unauthorized errors
         else if (error.response.status === 401) {
           setErrorMessage(error.response.data.message || "Invalid username or password.");
         }
-        // Handle other error status codes
         else {
           setErrorMessage(error.response.data.message || "An error occurred during login.");
         }
       } else if (error.request) {
-        // The request was made but no response was received
         console.log('Error request:', error.request);
         setErrorMessage("No response from server. Please try again.");
       } else {
-        // Something happened in setting up the request that triggered an Error
         setErrorMessage("An error occurred. Please try again.");
       }
     }

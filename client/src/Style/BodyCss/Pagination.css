@@ -54,3 +54,19 @@
     outline: none;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
 }
+@media (max-width: 575.98px) { 
+    .pagination {
+        gap: 5px; /* Reduce gap between buttons */
+    }
+
+    .pagination-btn {
+        padding: 8px 12px; /* Reduce padding for smaller buttons */
+        margin: 0 3px; /* Less margin to fit more buttons */
+        font-size: 14px; /* Slightly smaller text */
+    }
+
+    .pagination-dots {
+        padding: 8px 10px; /* Reduce dots padding */
+        font-size: 16px; /* Slightly smaller font size */
+    }
+ }

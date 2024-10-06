@@ -11,11 +11,11 @@ function Footer() {
                 <footer id="footer">
                     <div className="grid">
                         <div className="row">
-                            <ul className="footer-genr-list col col-lg-2 col-md-4 ">
+                            <ul className="footer-genr-list col col-lg-2 col-md-4 col-6">
                                 <li>TTFilm</li>
                                 <img className="logo-footer" src="/assets/images/logo-no-background.png" alt="TTFilm logo" />
                             </ul>
-                            <ul className="footer-genr-list col col-lg-2 col-md-4">
+                            <ul className="footer-genr-list col col-lg-2 col-md-4 col-6">
                                 <li className="footer-genr-list-item"><a style={{ color: '#66ad31' }} href="" className="footer-genr-list-item_link">Fantastic Film</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">American Film</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Korean Film</a></li>
@@ -24,7 +24,7 @@ function Footer() {
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Honor Film</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">VietNam Film</a></li>
                             </ul>
-                            <ul className="footer-genr-list col col-lg-2 col-md-4 ">
+                            <ul className="footer-genr-list col col-lg-2 col-md-4 col-6">
                                 <li className="footer-genr-list-item"><a style={{ color: '#66ad31' }} href="" className="footer-genr-list-item_link">New Film</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Movie Theaters</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Odd Film</a></li>
@@ -33,7 +33,7 @@ function Footer() {
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Fantasy Movie</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Drama Film</a></li>
                             </ul>
-                            <ul className="footer-genr-list col col-lg-2 col-md-4">
+                            <ul className="footer-genr-list col col-lg-2 col-md-4 col-6">
                                 <li className="footer-genr-list-item"><a style={{ color: '#66ad31' }} href="" className="footer-genr-list-item_link">About Us</a></li>
                                 <ul className="aboutus-icon-list">
                                     <li className="footer-genr-list-item c-3"><a href="https://www.facebook.com/thinhjbeosofficial/?locale=vi_VN" className="aboutus-icon_link"><FontAwesomeIcon icon={faFacebook} className="aboutus-icon" /></a></li>
@@ -42,7 +42,7 @@ function Footer() {
                                     <li className="footer-genr-list-item c-3"><a href="mailto:kieplulanh93@gmail.com" className="aboutus-icon_link"><FontAwesomeIcon icon={faEnvelope} className="aboutus-icon" /></a></li>
                                 </ul>
                             </ul>
-                            <ul className="footer-genr-list col col-lg-2 col-md-4">
+                            <ul className="footer-genr-list col col-lg-2 col-md-4 col-6">
                                 <li className="footer-genr-list-item"><a style={{ color: '#66ad31' }} href="" className="footer-genr-list-item_link">Contact With Us</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Ask Question</a></li>
                                 <li className="footer-genr-list-item"><a href="" className="footer-genr-list-item_link">Contact</a></li>

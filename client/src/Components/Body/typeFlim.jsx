@@ -55,7 +55,7 @@ function TypeFilm() {
                 <div className="grid">
                     <div className="row header-container">
                         <div className="film-header-container">
-                            <h1 className="film-item_header">{dataFilm?.seoOnPage?.titleHead || "Phim Bộ"}</h1>
+                            <h1 className="film-item_header">{dataFilm?.seoOnPage?.titleHead || "Đang tải phim"}</h1>
                         </div>
                     </div>
                     <div className='row'>
