@@ -47,7 +47,7 @@ function SearchResult() {
 
     return (
         <div>
-            <div class="maincontainer">
+            <div class="maincontainer-searchResult">
                 <div class="grid">
                     <div class="row header-container">
                         <div class="film-header-container">

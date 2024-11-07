@@ -124,6 +124,11 @@
     color: white;
     height: 100%;
 }
+.maincontainer-searchResult {
+    background-color: black;
+    color: white;
+    padding-bottom: 10vh;
+}
 
 
 .movie-list-container {
